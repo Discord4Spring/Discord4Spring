@@ -25,14 +25,28 @@
 package com.discord4spring.discord4spring.command;
 
 import lombok.Data;
+import org.springframework.stereotype.Component;
 
 @Data
+@Component
 public class CommandParserImpl implements CommandParser {
     private Command command;
     private String input;
 
+    /**
+     * Applies this function to the given arguments.
+     *
+     * @param command the first function argument
+     * @param s       the second function argument
+     * @return the function result
+     */
+    @Override
+    public String apply(Command command, String s) {
+        return input.replaceAll(command.prefix() + " ", "");
+    }
+
     @Override
     public String parseCommand(Command command, String input) {
-        return input.replaceAll(command.prefix() + " ", "");
+        return apply(command, input);
     }
 }

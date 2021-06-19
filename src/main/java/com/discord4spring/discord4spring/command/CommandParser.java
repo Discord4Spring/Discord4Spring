@@ -24,10 +24,9 @@
 
 package com.discord4spring.discord4spring.command;
 
-import org.springframework.stereotype.Component;
+import java.util.function.BiFunction;
 
-@Component
-@FunctionalInterface
-public interface CommandParser {
+
+public interface CommandParser extends BiFunction<Command, String, String> {
     String parseCommand(Command command, String input);
 }
