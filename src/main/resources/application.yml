@@ -1,0 +1,17 @@
+server:
+  port: 0
+hypixel:
+  token: ${HYPIXEL_API_TOKEN:YOURTOKENHERE}
+bot:
+  token: ${FLOPPY_BOT_TOKEN:YOURTOKENHERE}
+  embed:
+    title: "-SP3CTR3 BOT-"
+    description: "This is in BETA - DM Yoursole1#7254 with issues"
+    color: 2871056
+    thumbnail:
+      url: "https://cdn.discordapp.com/attachments/826929655851384922/852204578064564254/a_3596d9dbe4464e2d1cb9265d8ceb3ccf.png"
+    footer:
+      text: "Created with \u2665 by Yoursole1#7254"
+logging:
+  level:
+    root: info
