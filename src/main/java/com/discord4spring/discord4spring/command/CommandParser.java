@@ -22,14 +22,11 @@
  * SOFTWARE.
  */
 
-package com.discord4spring.discord4spring;
+package com.discord4spring.discord4spring.command;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import java.util.function.BiFunction;
 
-@SpringBootApplication
-public class Discord4SpringApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(Discord4SpringApplication.class, args);
-    }
+
+public interface CommandParser extends BiFunction<Command, String, String> {
+    String parseCommand(Command command, String input);
 }

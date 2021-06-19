@@ -35,6 +35,11 @@ import java.util.function.Function;
 @Getter
 @AllArgsConstructor
 public class CommandListener extends MessageCreateListener {
+
+    private final CommandParser commandParser;
     private final String prefix;
+
+
     private final Function<Message, Mono<Void>> function;
+
 }

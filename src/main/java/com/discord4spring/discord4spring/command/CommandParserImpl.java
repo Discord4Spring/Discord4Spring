@@ -22,14 +22,31 @@
  * SOFTWARE.
  */
 
-package com.discord4spring.discord4spring;
+package com.discord4spring.discord4spring.command;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import lombok.Data;
+import org.springframework.stereotype.Component;
 
-@SpringBootApplication
-public class Discord4SpringApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(Discord4SpringApplication.class, args);
+@Data
+@Component
+public class CommandParserImpl implements CommandParser {
+    private Command command;
+    private String input;
+
+    /**
+     * Applies this function to the given arguments.
+     *
+     * @param command the first function argument
+     * @param s       the second function argument
+     * @return the function result
+     */
+    @Override
+    public String apply(Command command, String s) {
+        return input.replaceAll(command.prefix() + " ", "");
+    }
+
+    @Override
+    public String parseCommand(Command command, String input) {
+        return apply(command, input);
     }
 }

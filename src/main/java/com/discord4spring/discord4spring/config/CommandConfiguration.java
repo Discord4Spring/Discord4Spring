@@ -24,9 +24,9 @@
 
 package com.discord4spring.discord4spring.config;
 
+import com.discord4spring.discord4spring.command.Command;
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import com.discord4spring.discord4spring.command.Command;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
