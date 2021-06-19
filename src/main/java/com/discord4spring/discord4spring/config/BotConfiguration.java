@@ -1,4 +1,4 @@
-package net.hypixel.floppybot.config;
+package com.discord4spring.discord4spring.config;
 
 import discord4j.core.DiscordClientBuilder;
 import discord4j.core.GatewayDiscordClient;

@@ -1,11 +1,11 @@
-package net.hypixel.floppybot.command;
+package com.discord4spring.discord4spring.command;
 
+import com.discord4spring.discord4spring.embed.EmbedBuilder;
 import discord4j.core.GatewayDiscordClient;
 import discord4j.core.event.domain.Event;
 import discord4j.core.object.entity.Message;
 import discord4j.core.object.entity.channel.MessageChannel;
-import net.hypixel.floppybot.embed.EmbedBuilder;
-import net.hypixel.floppybot.event.EventListener;
+import com.discord4spring.discord4spring.event.EventListener;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,22 +1,16 @@
-package net.hypixel.floppybot.config;
+package com.discord4spring.discord4spring.config;
 
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import net.hypixel.floppybot.command.Command;
-import net.hypixel.floppybot.mapper.PlayerMapper;
-import net.hypixel.floppybot.model.Player;
-import net.hypixel.floppybot.service.MojangService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.discord4spring.discord4spring.command.Command;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.concurrent.ExecutionException;
 import java.util.function.Function;
 
 @Slf4j
 @Getter
 @Configuration
-@SuppressWarnings("SpringConfigurationProxyMethods")
 public class CommandConfiguration {
 
     @Bean(autowireCandidate = false)
@@ -49,21 +43,4 @@ public class CommandConfiguration {
         return String::toUpperCase;
     }
 
-    @Bean
-    @Command(prefix = "!getPlayer")
-    public Function<String, String> getPlayer(PlayerMapper playerMapper, MojangService mojangService) {
-        return s -> {
-            log.info("Getting player: " + s);
-            try {
-                var player = playerMapper.sourceToDestination(mojangService.getPlayerByName(s));
-                log.info("Got Player");
-                return player.toString();
-            } catch (ExecutionException | InterruptedException e) {
-                log.info("Failed to get player: " + s);
-                log.error(e.getMessage());
-                Thread.currentThread().interrupt();
-            }
-            return "Could not find player: " + s;
-        };
-    }
 }

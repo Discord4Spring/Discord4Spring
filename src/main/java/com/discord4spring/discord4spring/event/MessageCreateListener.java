@@ -1,4 +1,4 @@
-package net.hypixel.floppybot.event;
+package com.discord4spring.discord4spring.event;
 
 import discord4j.core.event.domain.message.MessageCreateEvent;
 import lombok.extern.slf4j.Slf4j;

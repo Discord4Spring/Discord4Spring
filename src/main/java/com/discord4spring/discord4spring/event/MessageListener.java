@@ -1,4 +1,4 @@
-package net.hypixel.floppybot.event;
+package com.discord4spring.discord4spring.event;
 
 import discord4j.core.object.entity.Message;
 import reactor.core.publisher.Mono;

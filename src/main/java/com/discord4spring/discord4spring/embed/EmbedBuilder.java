@@ -1,4 +1,4 @@
-package net.hypixel.floppybot.embed;
+package com.discord4spring.discord4spring.embed;
 
 import discord4j.core.spec.EmbedCreateSpec;
 import org.springframework.beans.factory.annotation.Autowired;

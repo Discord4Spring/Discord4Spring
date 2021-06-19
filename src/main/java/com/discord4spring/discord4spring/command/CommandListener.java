@@ -1,9 +1,9 @@
-package net.hypixel.floppybot.command;
+package com.discord4spring.discord4spring.command;
 
+import com.discord4spring.discord4spring.event.MessageCreateListener;
 import discord4j.core.object.entity.Message;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import net.hypixel.floppybot.event.MessageCreateListener;
 import reactor.core.publisher.Mono;
 
 import java.util.function.Function;

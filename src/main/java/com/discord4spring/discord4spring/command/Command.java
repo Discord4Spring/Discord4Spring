@@ -1,4 +1,4 @@
-package net.hypixel.floppybot.command;
+package com.discord4spring.discord4spring.command;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
