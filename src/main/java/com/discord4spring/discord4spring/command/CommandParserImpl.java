@@ -24,22 +24,15 @@
 
 package com.discord4spring.discord4spring.command;
 
-import com.discord4spring.discord4spring.event.MessageCreateListener;
-import discord4j.core.object.entity.Message;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import reactor.core.publisher.Mono;
+import lombok.Data;
 
-import java.util.function.Function;
+@Data
+public class CommandParserImpl implements CommandParser {
+    private Command command;
+    private String input;
 
-@Getter
-@AllArgsConstructor
-public class CommandListener extends MessageCreateListener {
-
-    private final CommandParser commandParser;
-    private final String prefix;
-
-
-    private final Function<Message, Mono<Void>> function;
-
+    @Override
+    public String parseCommand(Command command, String input) {
+        return input.replaceAll(command.prefix() + " ", "");
+    }
 }

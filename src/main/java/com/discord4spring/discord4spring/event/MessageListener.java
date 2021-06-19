@@ -24,6 +24,7 @@
 
 package com.discord4spring.discord4spring.event;
 
+import com.discord4spring.discord4spring.command.CommandParser;
 import discord4j.core.object.entity.Message;
 import reactor.core.publisher.Mono;
 
@@ -34,9 +35,7 @@ public interface MessageListener {
     String getPrefix();
     Function<Message, Mono<Void>> getFunction();
 
-    default String parseCommand(String command) {
-        return command.replaceAll(getPrefix() + " ", "");
-    }
+    CommandParser getCommandParser();
 
     default Mono<Void> processCommand(Message eventMessage) {
         return Mono.just(eventMessage)
