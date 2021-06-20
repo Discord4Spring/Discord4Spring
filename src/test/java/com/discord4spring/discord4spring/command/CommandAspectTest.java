@@ -22,29 +22,27 @@
  * SOFTWARE.
  */
 
-package com.discord4spring.discord4spring.embed;
+package com.discord4spring.discord4spring.command;
 
-import discord4j.core.spec.EmbedCreateSpec;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import org.springframework.stereotype.Component;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import java.util.function.Consumer;
+class CommandAspectTest {
 
-@Getter
-@Component
-@AllArgsConstructor
-public class EmbedBuilder {
-
-    private Consumer<EmbedCreateSpec> embedCreateSpecConsumer;
-
-    public EmbedBuilder addField(String name, String value, boolean inline) {
-        embedCreateSpecConsumer = embedCreateSpecConsumer
-                .andThen(embedCreateSpec -> embedCreateSpec.addField(name, value, inline));
-        return this;
+    @BeforeEach
+    void setUp() {
     }
 
-    public Consumer<EmbedCreateSpec> build() {
-        return embedCreateSpecConsumer;
+    @Test
+    void addListener() {
     }
+
+    @Test
+    void createMessage() {
+    }
+
+    @Test
+    void addToCommandRegistry() {
+    }
+
 }
