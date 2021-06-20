@@ -26,8 +26,6 @@ package com.discord4spring.discord4spring.command;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class CommandParserTest {
 
     @Test

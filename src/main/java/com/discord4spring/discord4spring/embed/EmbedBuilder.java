@@ -26,9 +26,7 @@ package com.discord4spring.discord4spring.embed;
 
 import discord4j.core.spec.EmbedCreateSpec;
 import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.ToString;
 import org.springframework.stereotype.Component;
 
 import java.util.function.Consumer;
