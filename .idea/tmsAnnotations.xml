@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="TmsAnnotationSettings">
+    <option name="testCaseLinkAnnotations">
+      <set>
+        <TmsAnnotation>
+          <option name="enabled" value="false" />
+          <option name="qualifiedName" value="io.qameta.allure.TmsLink" />
+        </TmsAnnotation>
+        <TmsAnnotation>
+          <option name="enabled" value="false" />
+          <option name="qualifiedName" value="io.qameta.allure.Issue" />
+        </TmsAnnotation>
+        <TmsAnnotation>
+          <option name="qualifiedName" value="com.discord4spring.discord4spring.command.MyTmsAnnotation" />
+        </TmsAnnotation>
+      </set>
+    </option>
+  </component>
+</project>
