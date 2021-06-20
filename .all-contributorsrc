@@ -1,0 +1,38 @@
+{
+  "projectName": "Discord4Spring",
+  "projectOwner": "Discord4Spring",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "CONTRIBUTORS.md",
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "gitmoji",
+  "contributors": [
+    {
+      "login": "Thearchermancoding",
+      "name": "Owen Hayes",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20994684?v=4",
+      "profile": "https://github.com/Thearchermancoding",
+      "contributions": [
+        "question",
+        "bug",
+        "code",
+        "data",
+        "design",
+        "doc",
+        "ideas",
+        "infra",
+        "maintenance",
+        "mentoring",
+        "projectManagement",
+        "research",
+        "review",
+        "test"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
