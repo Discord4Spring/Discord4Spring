@@ -25,22 +25,24 @@
 package com.discord4spring.discord4spring.embed;
 
 import discord4j.core.spec.EmbedCreateSpec;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.ToString;
 import org.springframework.stereotype.Component;
 
 import java.util.function.Consumer;
 
+@Getter
 @Component
+@AllArgsConstructor
 public class EmbedBuilder {
-    @Autowired
+
     private Consumer<EmbedCreateSpec> embedCreateSpecConsumer;
 
     public EmbedBuilder addField(String name, String value, boolean inline) {
         embedCreateSpecConsumer = embedCreateSpecConsumer
-                .andThen(embedCreateSpec ->
-                        embedCreateSpec.addField(name, value, inline
-                        )
-                );
+                .andThen(embedCreateSpec -> embedCreateSpec.addField(name, value, inline));
         return this;
     }
 

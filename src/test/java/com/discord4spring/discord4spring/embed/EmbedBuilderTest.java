@@ -24,17 +24,68 @@
 
 package com.discord4spring.discord4spring.embed;
 
+import discord4j.core.spec.EmbedCreateSpec;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.*;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.mock.mockito.MockBean;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.function.Consumer;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.*;
+import static org.mockito.Mockito.*;
+
+@ExtendWith(MockitoExtension.class)
 class EmbedBuilderTest {
 
+    @Mock
+    private Consumer<EmbedCreateSpec> embedCreateSpecConsumer;
+    @InjectMocks
+    private EmbedBuilder underTest;
+    @Captor
+    private ArgumentCaptor<Consumer<EmbedCreateSpec>> captor;
+
+
     @Test
-    void addField() {
+    void testAddFieldCallsEmbedCreateSpecConsumerAndThen() {
+        underTest.addField(
+                "TEST",
+                "TEST",
+                true
+        );
+
+        verify(embedCreateSpecConsumer).andThen(ArgumentMatchers.<Consumer<EmbedCreateSpec>>any());
     }
 
     @Test
-    void build() {
+    void testAddFieldReturnsEmbedBuilder() {
+        var out = underTest.addField(
+                "TEST",
+                "TEST",
+                true
+        );
+
+        assertThat(out)
+                .as("out should not be null.")
+                .isNotNull()
+                .as("out should be an instance of EmbedBuilder")
+                .isInstanceOf(EmbedBuilder.class);
+    }
+
+    @Test
+    void testBuild() {
+        Consumer<EmbedCreateSpec> out = underTest.build();
+
+        assertThat(out)
+                .as("out should not be null.")
+                .isNotNull()
+                .as("out should be an instance of Consumer.")
+                .isInstanceOf(Consumer.class)
+                .as("out should be equal to underTest.getEmbedCreateSpecConsumer()")
+                .isEqualTo(underTest.getEmbedCreateSpecConsumer());
     }
 }
